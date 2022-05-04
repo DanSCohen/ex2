@@ -29,7 +29,7 @@ public:
     */
     Mtmchkin(const char* playerName, const Card* cardsArray, int numOfCards);
 
-
+   
     /*
      * Play the next Card - according to the instruction in the exercise document
      *
@@ -57,10 +57,19 @@ public:
      */
     GameStatus getGameStatus() const;
 
-    //TODO: complete the Mtmchkin class.
+    /*
+     * * D'tor of the game:
+    */
+    ~Mtmchkin();
 
 private:
-    //TODO: complete the Mtmchkin class.
+    const int MAX_LEVEL = 10;
+
+    Player m_player;
+    const Card* m_deck;
+    int m_deckSize;
+    int m_currentCardNumber;
+    GameStatus m_status;
 
 };
 

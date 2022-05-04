@@ -3,7 +3,31 @@
 
 
  Card :: Card(CardType type, const CardStats& stats) : m_effect(type), m_stats(stats)
- {};
+ {
+     if(m_stats.buff < 0){
+         m_stats.buff = 0;
+     }
+
+     if(m_stats.cost < 0){
+         m_stats.cost = 0;
+     }
+
+     if(m_stats.force < 0){
+         m_stats.force =0;
+     }
+
+     if(m_stats.heal < 0){
+         m_stats.heal = 0;
+     }
+     
+     if(m_stats.hpLossOnDefeat < 0){
+         m_stats.hpLossOnDefeat = 0;
+     }
+
+     if(m_stats.loot < 0){
+         m_stats.loot = 0;
+     }
+ };
 
 void Card :: applyEncounter(Player& player) const{
     switch (m_effect)
